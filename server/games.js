@@ -17,10 +17,20 @@ Game.prototype.getId = function () {
 };
 
 Game.prototype.addPlayer = function (p) {
+  var self = this;
   if (this._players.length > 1) {
     return false;
   }
   this._players.push(p);
+  if (this._players.length === 1) {
+    // Remove the game if the host leaves before an opponent joins.
+    p.on('disconnect', function () {
+      if (self._players.length === 1) {
+        self._players = [];
+        self._gameCollection.removeGame(self._id);
+      }
+    });
+  }
   if (this._players.length > 1) {
     this._addHandlers();
     this._players[0].emit(Messages.PLAYER_CONNECTED, 0);
@@ -77,7 +87,7 @@ GameCollection.prototype.getGame = function (game) {
 };
 
 GameCollection.prototype.createGame = function (id) {
-  if (this._games[game]) {
+  if (this._games[id]) {
     return false;
   }
   var game = new Game(id, this);
