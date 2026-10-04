@@ -1,23 +1,6 @@
-table {
-    margin: auto;
-}
-td {
-    padding: 10px;
-}
-th {
-    font-size: 19px;
-}
-.instructions-list {
-    margin-left: 150px;
-}
-h1 {
-    text-align: center;
-}
-canvas {
+#movementjs-main-canvas {
     border: 3px solid white;
     border-radius: 5px;
-}
-#movementjs-main-canvas {
     -webkit-transform: scale(-1, 1);
     -moz-transform: scale(-1, 1);
     position: static !important;
@@ -35,7 +18,13 @@ body, html {
     width: 600px;
     height: 400px;
     position: relative;
-    border-radius: 10px;
+    margin: 30px auto 0;
+    border: 3px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#arena canvas {
+    display: block;
 }
 #arena {
     width: 100%;
@@ -116,8 +105,22 @@ body, html {
     margin-top: 15px;
     font-size: 14px;
 }
-.manual > div {
-    margin-left: 150px;
+.manual h1 {
+    font-size: 17px;
+    text-align: center;
+}
+.manual table {
+    width: 100%;
+}
+.manual th,
+.manual td {
+    width: 50%;
+    vertical-align: top;
+    text-align: left;
+}
+.manual .restart {
+    text-align: center;
+    padding-top: 10px;
 }
 .manual a {
     color: #fff;
