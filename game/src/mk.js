@@ -75,7 +75,7 @@
   };
 
   mk.controllers.Base.prototype.getOpponent = function (f) {
-    return this._opponents[f.getName(name)];
+    return this._opponents[f.getName()];
   };
 
   mk.controllers.Base.prototype.init = function (promise) {
@@ -237,7 +237,10 @@
     if (f.getMove().type === m.BLOCK && !pressed[k.BLOCK]) {
       return m.STAND;
     }
-    if (Object.keys(pressed).length === 0) {
+    var anyPressed = Object.keys(k).some(function (name) {
+      return typeof k[name] === 'number' && pressed[k[name]];
+    });
+    if (!anyPressed) {
       return m.STAND;
     }
     if (pressed[k.BLOCK]) {
@@ -313,7 +316,7 @@
   };
 
   mk.controllers.WebcamInput.prototype._addMovementHandlers = function () {
-    if (Movement === undefined) {
+    if (typeof Movement === 'undefined') {
       throw 'The WebcamInput requires movement.js';
     }
     var self = this,
@@ -800,10 +803,7 @@
   mk.moves.Move.prototype._action = function () {};
 
   mk.moves.Move.prototype._nextStep = function (callback) {
-    var img = document.createElement('img'),
-      conf = mk.config;
-
-    img = this._steps[this.owner.getOrientation()][this._currentStep];
+    var img = this._steps[this.owner.getOrientation()][this._currentStep];
     this.owner.setState(img);
     callback.apply(this);
     this.owner.refresh();
@@ -1587,7 +1587,6 @@
       x: 50,
       y: mk.config.PLAYER_TOP
     };
-    this.init();
   };
 
   mk.fighters.Fighter.prototype.init = function (callback) {
