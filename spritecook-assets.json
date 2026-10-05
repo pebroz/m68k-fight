@@ -2,13 +2,16 @@
   "assets": [
     {
       "path": "game/images/arenas/0/arena.png",
-      "label": "Arena 0 - Sega Power Tower (generated, palette-remapped to original)",
-      "asset_id": "1d71b076-9340-4291-8de0-1e354146add3",
-      "sha12": "1139671fa061",
-      "note": "sha12 is of the committed file, which is remapped to the original arena palette after download"
+      "label": "Arena 0 - Sega Power Tower v2 (32X lowered, Doom cartridge, yellow underglow)",
+      "asset_id": "db18172f-3192-4b61-b253-2dc2936cfa5a",
+      "sha12": "e7d6354ea0ea",
+      "note": "sha12 is of the committed file, reduced to 256 colours after download"
     },
     {
-      "path": "game/images/arenas/0/arena.png (original, pre-edit)",
+      "label": "Arena 0 - Sega Power Tower v1 (superseded)",
+      "asset_id": "1d71b076-9340-4291-8de0-1e354146add3"
+    },
+    {
       "label": "Arena 0 - original Mortal Kombat tower",
       "asset_id": "2b7ec468-03e4-4eca-970b-4d6c9a901a8e",
       "sha12": "1243d361ec4f"
