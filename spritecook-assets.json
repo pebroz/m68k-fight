@@ -1,0 +1,17 @@
+{
+  "assets": [
+    {
+      "path": "game/images/arenas/0/arena.png",
+      "label": "Arena 0 - Sega Power Tower (generated, palette-remapped to original)",
+      "asset_id": "1d71b076-9340-4291-8de0-1e354146add3",
+      "sha12": "1139671fa061",
+      "note": "sha12 is of the committed file, which is remapped to the original arena palette after download"
+    },
+    {
+      "path": "game/images/arenas/0/arena.png (original, pre-edit)",
+      "label": "Arena 0 - original Mortal Kombat tower",
+      "asset_id": "2b7ec468-03e4-4eca-970b-4d6c9a901a8e",
+      "sha12": "1243d361ec4f"
+    }
+  ]
+}
